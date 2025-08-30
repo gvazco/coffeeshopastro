@@ -1,7 +1,16 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "@/layouts/Layout.astro";
+import { BaseWpSchema } from "@/types";
+
+const url = "http://coffeeshop.local/wp-json/wp/v2/pages?slug=nosotros";
+const response = await fetch(url);
+const json = await response.json();
+const data = BaseWpSchema.parse(json[0]);
+console.log(data);
 ---
 
-<Layout>
-  <h1>Nosotros</h1>
-</Layout>
+<Layout
+  title="Nosotros"
+  subtitle={data.acf.subtitle}
+  bgImage={data.featured_images.full.url}
+/>

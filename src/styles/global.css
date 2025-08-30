@@ -14,4 +14,27 @@
   --color-coffee-800: #7c3f24;
   --color-coffee-900: #5e311e;
   --color-coffee-950: #3a1a0e;
+
+  --icon-size: 6rem;
+}
+
+@utility bg-image {
+  background-image: url("../assets/bg_home.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+@utility coffee-icon {
+  content: "";
+  background-image: url("../assets/coffee.svg");
+  background-size: var(--icon-size);
+  backgorund-position: center;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  display: block;
+  margin-inline: auto;
+}
+
+@utility font-secondary {
+  font-family: "PT Sans", sans-serif;
 }
