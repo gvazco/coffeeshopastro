@@ -10,4 +10,7 @@ export default defineConfig({
       tailwindcss(),
     ],
   },
+  image: {
+    domains: ["coffeeshop.local"],
+  },
 });
