@@ -2,7 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import { ProcessPageSchema } from "@/types";
 import { Picture, inferRemoteSize } from "astro:assets";
-const url = "http://coffeeshop.local/wp-json/wp/v2/pages?slug=proceso";
+const url = `${import.meta.env.API_URL}/pages?slug=proceso`;
 const response = await fetch(url);
 const json = await response.json();
 const data = ProcessPageSchema.parse(json[0]);

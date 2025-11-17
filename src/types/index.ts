@@ -7,15 +7,15 @@ const imageSchema = z.object({
 });
 
 const featureImagesSchema = z.object({
-  thumbnail: imageSchema,
   medium: imageSchema,
   medium_large: imageSchema,
   large: imageSchema,
   full: imageSchema,
 });
 
-export const BaseWpSchema = z.object({
+export const BaseWPSchema = z.object({
   id: z.number(),
+  slug: z.string(),
   title: z.object({
     rendered: z.string(),
   }),
@@ -28,16 +28,50 @@ export const BaseWpSchema = z.object({
   }),
 });
 
+const gallerySchema = z.object({
+  large: imageSchema,
+  full: imageSchema,
+});
+
+export const GalleryPageSchema = BaseWPSchema.extend({
+  gallery: z.array(gallerySchema),
+});
+
 const processSchema = z.object({
   title: z.string(),
   description: z.string(),
   image: z.string(),
 });
 
-export const ProcessPageSchema = BaseWpSchema.extend({
+export const ProcessPageSchema = BaseWPSchema.extend({
   acf: z
     .object({
       subtitle: z.string(),
     })
     .catchall(processSchema),
 });
+
+export const CategorySchema = z.object({
+  id: z.number(),
+  name: z.string(),
+  slug: z.string(),
+});
+
+export const CategoriesSlugSchema = z.array(
+  CategorySchema.pick({
+    slug: true,
+  })
+);
+
+const CategoriesSchema = z.array(CategorySchema);
+
+export const PostSchema = BaseWPSchema.omit({
+  acf: true,
+}).extend({
+  date: z.string(),
+  category_details: CategoriesSchema,
+});
+
+export const PostsSchema = z.array(PostSchema);
+
+export type Post = z.infer<typeof PostSchema>;
