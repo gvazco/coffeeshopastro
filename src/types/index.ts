@@ -1,4 +1,4 @@
-import { z } from "astro:content";
+import { z } from "zod";
 
 const imageSchema = z.object({
   url: z.string(),
@@ -75,3 +75,5 @@ export const PostSchema = BaseWPSchema.omit({
 export const PostsSchema = z.array(PostSchema);
 
 export type Post = z.infer<typeof PostSchema>;
+
+export type Gallery = z.infer<typeof gallerySchema>;
