@@ -39,6 +39,10 @@
   font-family: "PT Sans", sans-serif;
 }
 
+@utility bg-menu-image {
+  background-image: url("../assets/menu_artwork.svg");
+}
+
 /* Estilizado del elemento audio y sus controles */
 .wp-audio-shortcode {
   width: 100% !important;
@@ -97,4 +101,12 @@ audio {
   border: none;
   height: 3.5rem;
   padding: 1rem;
+}
+
+.input-label {
+  @apply text-coffee-900 uppercase font-bold text-lg
+}
+
+.input-field {
+  @apply border-coffee-900 border-2 p-2
 }
