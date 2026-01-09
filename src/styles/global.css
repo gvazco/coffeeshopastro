@@ -28,7 +28,7 @@
   content: "";
   background-image: url("../assets/coffee.svg");
   background-size: var(--icon-size);
-  backgorund-position: center;
+  background-position: center;
   width: var(--icon-size);
   height: var(--icon-size);
   display: block;
@@ -104,9 +104,9 @@ audio {
 }
 
 .input-label {
-  @apply text-coffee-900 uppercase font-bold text-lg
+  @apply text-coffee-900 uppercase font-bold text-lg;
 }
 
 .input-field {
-  @apply border-coffee-900 border-2 p-2
+  @apply border-coffee-900 border-2 p-2;
 }
