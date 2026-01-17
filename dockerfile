@@ -4,6 +4,10 @@ FROM node:18-alpine AS base
 # Establece el directorio de trabajo
 WORKDIR /app
 
+# Variables de entorno para el build
+ENV API_URL=https://coffeshop.core-hub-plex.space/wp-json/wp/v2
+ENV HOME_URL=https://coffeshop.core-hub-plex.space
+
 # Copia los archivos de dependencias
 COPY package*.json ./
 
