@@ -1,6 +1,6 @@
 import { renderers } from './renderers.mjs';
 import { c as createExports, s as serverEntrypointModule } from './chunks/_@astrojs-ssr-adapter_BxOKJAtM.mjs';
-import { manifest } from './manifest_CYdZopQt.mjs';
+import { manifest } from './manifest_D8hbpKlQ.mjs';
 
 const serverIslandMap = new Map();;
 
@@ -40,10 +40,10 @@ const _manifest = Object.assign(manifest, {
 });
 const _args = {
     "mode": "standalone",
-    "client": "file:///C:/Users/Gustavo%20Vazco/source/repos/coffeeshopastro/dist/client/",
-    "server": "file:///C:/Users/Gustavo%20Vazco/source/repos/coffeeshopastro/dist/server/",
     "host": false,
     "port": 4321,
+    "client": "file:///C:/Users/Gustavo%20Vazco/source/repos/coffeeshopastro/dist/client/",
+    "server": "file:///C:/Users/Gustavo%20Vazco/source/repos/coffeeshopastro/dist/server/",
     "assets": "_astro",
     "experimentalStaticHeaders": false
 };

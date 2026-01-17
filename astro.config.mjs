@@ -9,6 +9,8 @@ export default defineConfig({
   integrations: [react()],
   adapter: node({
     mode: "standalone",
+    host: "0.0.0.0",
+    port: process.env.PORT || 4321,
   }),
 
   vite: {
