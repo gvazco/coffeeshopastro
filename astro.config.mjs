@@ -7,10 +7,9 @@ import node from "@astrojs/node";
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
+  output: "server",
   adapter: node({
     mode: "standalone",
-    host: "0.0.0.0",
-    port: process.env.PORT || 4321,
   }),
 
   vite: {
