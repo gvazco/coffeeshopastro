@@ -21,6 +21,7 @@
     "leaflet": "^1.9.4",
     "notyf": "^3.10.0",
     "photoswipe": "^5.4.4",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.1.11",
     "zod": "^3.25.76"
   },
