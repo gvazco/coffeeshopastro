@@ -22,6 +22,9 @@ FROM node:18-alpine AS production
 # Establece el directorio de trabajo
 WORKDIR /app
 
+# Asegura que el servidor escuche en 0.0.0.0
+ENV HOST=0.0.0.0
+
 # Copia las dependencias de producción desde la etapa base
 COPY --from=base /app/package*.json ./
 COPY --from=base /app/node_modules ./node_modules
