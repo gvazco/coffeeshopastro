@@ -16,24 +16,14 @@ COPY . .
 # Construye la aplicación
 RUN npm run build
 
-# Etapa de producción: imagen más ligera
-FROM node:18-alpine AS production
+# Etapa de producción: usa Nginx para servir archivos estáticos
+FROM nginx:alpine AS production
 
-# Establece el directorio de trabajo
-WORKDIR /app
+# Copia los archivos construidos al directorio de Nginx
+COPY --from=base /app/dist /usr/share/nginx/html
 
-# Asegura que el servidor escuche en 0.0.0.0
-ENV HOST=0.0.0.0
+# Expone el puerto 80
+EXPOSE 80
 
-# Copia las dependencias de producción desde la etapa base
-COPY --from=base /app/package*.json ./
-COPY --from=base /app/node_modules ./node_modules
-
-# Copia los archivos construidos
-COPY --from=base /app/dist ./dist
-
-# Expone el puerto (por defecto 4321 en Astro SSR)
-EXPOSE 4321
-
-# Comando para ejecutar la aplicación
-CMD ["npm", "start"]
+# Comando por defecto de Nginx
+CMD ["nginx", "-g", "daemon off;"]
