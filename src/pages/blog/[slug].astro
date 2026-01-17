@@ -5,8 +5,6 @@ import { PostSchema } from "@/types";
 import PostMeta from "@/components/blog/PostMeta.astro";
 import PostCategories from "@/components/blog/PostCategories.astro";
 
-export const prerender = false;
-
 const { slug } = Astro.params;
 const res = await fetch(`${import.meta.env.API_URL}/posts?slug=${slug}`);
 const json = await res.json();
