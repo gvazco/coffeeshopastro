@@ -11,7 +11,7 @@ const $$slug = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$slug;
   const { slug } = Astro2.params;
-  const res = await fetch(`${"https://coffeshop.core-hub-plex.space/wp-json/wp/v2"}/posts?slug=${slug}`);
+  const res = await fetch(`${"https://api-coffeeshop.core-hub-plex.cloud/wp-json/wp/v2"}/posts?slug=${slug}`);
   const json = await res.json();
   const post = PostSchema.safeParse(json[0]);
   if (!post.success) return Astro2.redirect("/404");

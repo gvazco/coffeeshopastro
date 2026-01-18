@@ -21,6 +21,6 @@ export default defineConfig({
   },
 
   image: {
-    domains: ["coffeeshop.local", "coffeshop.core-hub-plex.space"],
+    domains: ["coffeeshop.local", "coffe-shop.core-hub-plex.cloud"],
   },
 });

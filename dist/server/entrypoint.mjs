@@ -141,7 +141,7 @@ const contact = {
       )
     }),
     handler: async (input) => {
-      const url = `${"https://coffeshop.core-hub-plex.space"}/wp-json/contact-form-7/v1/contact-forms/158/feedback`;
+      const url = `${"https://api-coffeeshop.core-hub-plex.cloud"}/wp-json/contact-form-7/v1/contact-forms/158/feedback`;
       const formData = new FormData();
       formData.append("your-name", input.name);
       formData.append("your-email", input.email);
